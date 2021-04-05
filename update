@@ -1,0 +1,5 @@
+#!/bin/sh
+# Author: Timo Anttila, moro@tuspe.com
+PWURL="/home/timo/processwire-master/"
+cd clients
+for d in ./* ; do (rm -rf "$d/wire" "$d/index.php" "$d/.htaccess" "$d/.htaccess" && cp -p "${PWURL}index.php" "$d/"&& cp -rp "${PWURL}wire" "$d/" && cp -p "${PWURL}htaccess.txt" "$d/.htaccess" && chown -R www-data.www-data "$d/wire" "$d/site/assets"); done
